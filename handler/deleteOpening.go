@@ -8,6 +8,18 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @BasePath /api/vi
+
+// @Summary Delete Opening
+// @Description Cria uma nova vaga
+// @Tags Vagas
+// @Accept json
+// @Produce json
+// @Param id query string true "Identificacao da vaga"
+// @Success 200 {object} DeleteOpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /opening [delete]
 func DeleteOpeningHandler(ctx *gin.Context) {
 	id := ctx.Query("id")
 
