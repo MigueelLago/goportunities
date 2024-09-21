@@ -8,6 +8,18 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @BasePath /api/vi
+
+// @Summary Show Opening
+// @Description Lista uma nova vaga via ID
+// @Tags Vagas
+// @Accept json
+// @Produce json
+// @Param id query string true "Identificacao da vaga"
+// @Success 200 {object} ShowOpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /opening [get]
 func ShowOpeningHandler(ctx *gin.Context) {
 	id := ctx.Query("id")
 

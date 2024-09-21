@@ -11,7 +11,7 @@ import (
 // @BasePath /api/vi
 
 // @Summary Delete Opening
-// @Description Cria uma nova vaga
+// @Description Deleta uma vaga
 // @Tags Vagas
 // @Accept json
 // @Produce json

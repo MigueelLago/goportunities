@@ -35,6 +35,13 @@ definitions:
       message:
         type: string
     type: object
+  handler.ShowOpeningResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.OpeningResponse'
+      message:
+        type: string
+    type: object
   schemas.OpeningResponse:
     properties:
       company:
@@ -65,7 +72,7 @@ paths:
     delete:
       consumes:
       - application/json
-      description: Cria uma nova vaga
+      description: Deleta uma vaga
       parameters:
       - description: Identificacao da vaga
         in: query
@@ -88,6 +95,34 @@ paths:
           schema:
             $ref: '#/definitions/handler.ErrorResponse'
       summary: Delete Opening
+      tags:
+      - Vagas
+    get:
+      consumes:
+      - application/json
+      description: Lista uma nova vaga via ID
+      parameters:
+      - description: Identificacao da vaga
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ShowOpeningResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+      summary: Show Opening
       tags:
       - Vagas
     post:
