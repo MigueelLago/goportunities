@@ -34,5 +34,5 @@ func CreateOpeningHandler(ctx *gin.Context) {
 		return
 	}
 
-	sendSuccess(ctx, "Vaga registrada!", opening)
+	sendSuccess(ctx, "Vaga registrada", opening)
 }
