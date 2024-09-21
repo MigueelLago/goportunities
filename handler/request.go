@@ -17,6 +17,15 @@ type CreateOpeningRequest struct {
 	Salary   int64  `json:"salary"`
 }
 
+type UpdateOpeningRequest struct {
+	Role     string `json:"role"`
+	Company  string `json:"company"`
+	Location string `json:"location"`
+	Remote   *bool  `json:"remote"`
+	Link     string `json:"link"`
+	Salary   int64  `json:"salary"`
+}
+
 func (r *CreateOpeningRequest) Validate() error {
 
 	// Verifica se os campos estão vazios.
@@ -44,4 +53,12 @@ func (r *CreateOpeningRequest) Validate() error {
 	}
 
 	return nil
+}
+
+func (r *UpdateOpeningRequest) Validate() error {
+	if r.Role != "" || r.Company != "" || r.Location != "" || r.Remote != nil || r.Link != "" || r.Salary > 0 {
+		return nil
+	}
+
+	return fmt.Errorf("pelo menos algum dos campos precisam ser informados")
 }
