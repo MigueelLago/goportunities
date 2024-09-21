@@ -7,6 +7,19 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @BasePath /api/vi
+
+// @Summary Update Opening
+// @Description Cria uma nova vaga
+// @Tags Vagas
+// @Accept json
+// @Produce json
+// @Param id query string true "Identificação da vaga"
+// @Param request body UpdateOpeningRequest true "Request body"
+// @Success 200 {object} UpdateOpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /opening [put]
 func UpdateOpeningHandler(ctx *gin.Context) {
 	request := UpdateOpeningRequest{}
 
