@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  opportunites-app:
+    container_name: opportunites-app
+    image: go-api-opportunites
+    build: .
+    ports:
+      - "8080:8080"
+
+volumes:
+  pgdata: {}
