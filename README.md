@@ -1,4 +1,4 @@
-# GoVagas Vagas API
+# GoVagas API
 
 Este projeto é uma API moderna de vagas de emprego construída usando Golang, como forma de aprender mais sobre a linguagem. A API utiliza o Go-Gin como roteador, GoORM para comunicação com o banco de dados, SQLite como banco de dados e Swagger para documentação e testes da API. O projeto segue uma estrutura de pacotes moderna para manter a base de código organizada e de fácil manutenção.
 
